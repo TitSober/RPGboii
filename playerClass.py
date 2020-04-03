@@ -2,12 +2,12 @@
 
 #gender not important rn
 class Player:
-    def __init__(self, name, gender, bad, race, hp):
+    def __init__(self, name, gender, hp,attack, speed):
         self.name = name
         self.gender = gender
-        self.bad = bad
-        self.race = race
         self.hp = hp
+        self.attack = attack
+        self.speed = speed
 
     def introduction(self):
         print("hi my name is", self.name," I am ",self.race)
