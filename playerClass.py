@@ -1,6 +1,4 @@
-#bad is bool does nothing now
 
-#gender not important rn
 class Player:
     def __init__(self, name, gender, hp,attack, speed):
         self.name = name
@@ -8,9 +6,8 @@ class Player:
         self.hp = hp
         self.attack = attack
         self.speed = speed
-
-    def introduction(self):
-        print("hi my name is", self.name," I am ",self.race)
+    def greeting(self):
+        print("hi i'm ",self.name)
 
 
 class enemy1:
