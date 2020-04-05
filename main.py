@@ -1,9 +1,9 @@
 import playerClass
 import random
-pl = playerClass.Player(input("Enter your name: "),"M",5,1,1,1)
-def pointDistribution(player):
+pl = playerClass.Player(input("Enter your name: "),"M",5,1,1,1,[])
+def pointDistribution(player,points):
     num = 0
-    points = 6
+
     while points != 0:
         print("you have ",points, " points left!")
         player.stats()
@@ -24,7 +24,7 @@ def pointDistribution(player):
             print("invalid choice! try again")
 
 
-pointDistribution(pl)
+pointDistribution(pl,6)
 
 enemy = playerClass.enemy1(10,1,1)
 
@@ -53,7 +53,11 @@ def battle(player,enemy):
                 print("you lost!")
     player.speed = speed
 
+def addToInventory(player,item):
+    player.inventory.append(item)
 
+addToInventory(pl,"gold coin")
+print(pl.inventory)
 
 '''
 battle(pl,enemy)
