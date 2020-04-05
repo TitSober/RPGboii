@@ -1,6 +1,31 @@
 import playerClass
 import random
-pl = playerClass.Player(input("Enter your name: "), input("enter your gender"),20,3, 2)
+pl = playerClass.Player(input("Enter your name: "),"M",5,1,1,1)
+def pointDistribution(player):
+    num = 0
+    points = 6
+    while points != 0:
+        print("you have ",points, " points left!")
+        player.stats()
+        num = int(input("enter 1 to add point to hp, 2 for attack, 3 for speed and 4 for luck"))
+        if num == 1:
+            player.hp = player.hp + 1
+            points = points - 1
+        elif num == 2:
+            player.attack = player.attack + 1
+            points = points - 1
+        elif num == 3:
+            player.speed = player.speed + 1
+            points = points - 1
+        elif num == 4:
+            player.luck = player.luck + 1
+            points = points - 1
+        else:
+            print("invalid choice! try again")
+
+
+pointDistribution(pl)
+
 enemy = playerClass.enemy1(10,1,1)
 
 def battle(player,enemy):
@@ -28,6 +53,9 @@ def battle(player,enemy):
                 print("you lost!")
     player.speed = speed
 
+
+
+'''
 battle(pl,enemy)
 
 menu = [pl.greeting,battle]
@@ -38,3 +66,4 @@ inventory = [[pl.greeting,2,3,4],
              [13,14,15,16]]
 inventory[0][0]()
 
+'''

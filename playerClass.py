@@ -1,13 +1,14 @@
 
 class Player:
-    def __init__(self, name, gender, hp,attack, speed):
+    def __init__(self, name, gender, hp,attack, speed,luck):
         self.name = name
         self.gender = gender
         self.hp = hp
         self.attack = attack
         self.speed = speed
-    def greeting(self):
-        print("hi i'm ",self.name)
+        self.luck = luck
+    def stats(self):
+        print("Your max health is ",self.hp,",your attack is  ",self.attack,", your speed is ",self.speed," and your luck is ",self.luck,"!")
 
 
 class enemy1:
