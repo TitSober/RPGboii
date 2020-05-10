@@ -45,21 +45,21 @@ def battle(player,enemy):
     #while loop wont end
     print("you encountered  an enemy!",end=" ")
     enemy.stats()
-    if input("Fight or Run: ") == "Run":
+    if input("Fight or Run: ").lower() == "run" and player.luck >= 3:
         print("you escaped!")
         return
     else:
         pass
     while player.hp >= 0 or enemy.hp >= 0:
-        print(player.hp)
-        print(enemy.hp)
+        #print(player.hp)
+        #print(enemy.hp)
         timer = random.randint(3,8)
 
         zac = time.time()
         print("You have to hit the enemy in ",timer,"seconds")
         a = input()
         kon = time.time()
-        print(kon-zac)
+        #print(kon-zac)
         if kon-zac >= timer-1 and kon-zac <= timer+0.5:
             enemy.hp -= player.attack
             print("enemy has ", enemy.hp, "health left!")
@@ -67,8 +67,8 @@ def battle(player,enemy):
                 print("you won")
                 return
         else:
-            player.hp -= enemy.attack - player.luck//2
-            print("you have ",pl.hp," left!")
+            player.hp -= enemy.attack
+            print("you have ",pl.hp," health points left!")
             if player.hp <= 0:
                 print("you lose!")
                 return
