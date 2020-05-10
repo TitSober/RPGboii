@@ -9,7 +9,7 @@ class Player:
         self.luck = luck
         self.inventory = inventory
     def stats(self):
-        print("Your max health is ",self.hp,",your attack is  ",self.attack,", your speed is ",self.speed," and your luck is ",self.luck,"!")
+        return "Your max health is ",self.hp,",your attack is  ",self.attack,", your speed is ",self.speed," and your luck is ",self.luck,"!"
 
 
 class enemy1:
