@@ -51,6 +51,8 @@ def battle(player,enemy):
     else:
         pass
     while player.hp >= 0 or enemy.hp >= 0:
+        print(player.hp)
+        print(enemy.hp)
         timer = random.randint(3,8)
 
         zac = time.time()
@@ -63,11 +65,13 @@ def battle(player,enemy):
             print("enemy has ", enemy.hp, "health left!")
             if enemy.hp <= 0:
                 print("you won")
+                return
         else:
             player.hp -= enemy.attack - player.luck//2
             print("you have ",pl.hp," left!")
             if player.hp <= 0:
                 print("you lose!")
+                return
     '''
     while player.hp >= 0 or enemy.hp >= 0 :
         if player.speed > enemy.speed :
