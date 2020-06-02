@@ -60,13 +60,14 @@ def battle(player,enemy):
         a = input()
         kon = time.time()
         #print(kon-zac)
-        if kon-zac >= timer-1 and kon-zac <= timer+0.5:
+        if kon-zac >= timer-1 and kon-zac <= timer+1:
             enemy.hp -= player.attack
             print("enemy has ", enemy.hp, "health left!")
             if enemy.hp <= 0:
                 print("you won")
                 return
         else:
+            print("You missed!")
             player.hp -= enemy.attack
             print("you have ",pl.hp," health points left!")
             if player.hp <= 0:
