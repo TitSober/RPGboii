@@ -1,7 +1,7 @@
 import playerClass
 import random
 import time
-pl = playerClass.Player(input("Enter your name: "),"M",5,1,1,1,{"matchbox":1})
+pl = playerClass.Player(input("Enter your name: "),"M",5,1,1,1,{"matchbox":1},0,1)
 def pointDistribution(player,points):
     num = 0
 
@@ -24,7 +24,18 @@ def pointDistribution(player,points):
         else:
             print("invalid choice! try again")
 
+def checkIfLvlUp(pl):
+    while pl.xp >= pl.lvl*10:
+        pl.lvl +=1
+        pl.xp -= pl.lvl*10
+        print("You leveled up! You are currently level",pl.lvl)
+        pointDistribution(pl,3)
+def experience_add(pl,xp_value):
+    pl.xp += xp_value
+    checkIfLvlUp(pl)
 
+
+experience_add(pl,100)
 pointDistribution(pl,6)
 
 enemy = playerClass.enemy1(10,1,1)
@@ -42,7 +53,7 @@ inventoryAdd(pl,"Gold",5)
 
 
 def battle(player,enemy):
-    #while loop wont end
+
     print("you encountered  an enemy!",end=" ")
     enemy.stats()
     if input("Fight or Run: ").lower() == "run" and player.luck >= 3:

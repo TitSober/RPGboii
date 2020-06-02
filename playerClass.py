@@ -1,6 +1,6 @@
 
 class Player:
-    def __init__(self, name, gender, hp,attack, speed,luck, inventory):
+    def __init__(self, name, gender, hp,attack, speed,luck, inventory,xp,lvl):
         self.name = name
         self.gender = gender
         self.hp = hp
@@ -8,8 +8,10 @@ class Player:
         self.speed = speed
         self.luck = luck
         self.inventory = inventory
+        self.xp = xp
+        self.lvl = lvl
     def stats(self):
-        return "Your max health is ",self.hp,",your attack is  ",self.attack,", your speed is ",self.speed," and your luck is ",self.luck,"!"
+        return "Your max health is ",self.hp,",your attack is  ",self.attack,", your speed is ",self.speed," and your luck is ",self.luck,"!"," You are Level",self.lvl
 
 
 class enemy1:
