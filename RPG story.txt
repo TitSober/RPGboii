@@ -1,3 +1,4 @@
+1. Chapter / combat & choices
 -Wake up (name)!
 -You slowly open your eyes but u cant see a clear picture of what is going on infront of you. You can hear a voice but you dont know who is calling for you...
 -(name) wake up! are you allright?
@@ -12,5 +13,15 @@
 -fait: you fait the monster. Knights and advatures defited other monsters and you managed to protect a child. Child happly runs towords they parents. His father is so happy that he gives
 you 20 gold
 (+20 gold added to inventory)
--throw: you loocked at the kid you. Saved kid looks at you back you pick up the kid and throw him in to the monster. Kid got toren apart and eaten. But you escaped.
+-throw: you loocked at the kid you saved. Kid looks at you back you pick up the kid and throw him in to the monster. Kid got toren apart and eaten. But you escaped.
 Knights and advatures defited all the monsters. You see a family who is crying for his child. You feel bad for uor self but you just ignor that.
+
+
+2.Shopping
+-After fait you decited to go down the path
+-You looked at your weapon. Its quite damaged.
+-you arrived to another villige and you see a weapon smith.
+-WEAPON SMITH: Would you like to buy something (yes)
+	-shop display
+
+-you bot a new weapon. Now you can kill monster more ezly.
