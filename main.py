@@ -2,9 +2,13 @@ import playerClass
 import random
 import time
 pl = playerClass.Player(input("Enter your name: "),"M",5,1,1,1,{"matchbox":1},0,1)
-def pointDistribution(player,points):
-    num = 0
 
+sword = playerClass.weapon("Used sword",5,10,1)
+axe = playerClass.weapon("Shitty axe", 7, 11, 1)
+mallet = playerClass.weapon("OOps",3,5,1)
+wps = [sword,axe,mallet,"empty","empty","empty","empty","empty"]
+
+def pointDistribution(player,points):
     while points != 0:
         print("you have ",points, " points left!")
         player.stats()
@@ -30,15 +34,24 @@ def checkIfLvlUp(pl):
         pl.xp -= pl.lvl*10
         print("You leveled up! You are currently level",pl.lvl)
         pointDistribution(pl,3)
+
 def experience_add(pl,xp_value):
     pl.xp += xp_value
     checkIfLvlUp(pl)
 
+def shop(pl,weapons):
+    print(" SHOP\n 1. {} {} gold, {} attack \n 2. {} {} gold {} attack \n 3. {} {} gold {} attack \n ".format(weapons[0].name,weapons[0].cost,weapons[0].damage,weapons[1].name,weapons[1].cost,weapons[1].damage,weapons[2].name,weapons[2].cost,weapons[2].damage))
+    weapon_buy = input("\nYou have {} gold\ninput what item you want to buy or press 0 to exit: ".format(pl.inventory["gold"]))
+    weapon_buy = int(weapon_buy)
+    if weapon_buy == 0:
+        return
+    else:
+        pl.inventory['gold'] = pl.inventory['gold'] - weapons[weapon_buy].cost
+        pl.inventory[weapons[weapon_buy].name] = weapons[weapon_buy].damage
 
-experience_add(pl,100)
-pointDistribution(pl,6)
 
-enemy = playerClass.enemy1(10,1,1)
+
+
 def inventoryAdd(pl,addedItem,quantityOfItem):
     inv = "\n"
     pl.inventory[addedItem] = int(quantityOfItem)
@@ -46,12 +59,9 @@ def inventoryAdd(pl,addedItem,quantityOfItem):
         inv += "|You have {},{}|\n".format(pl.inventory[item],item)
     print(inv)
     return inv
-
-
-inventoryAdd(pl,"Gold",5)
-
-
-
+inventoryAdd(pl,"gold",20)
+shop(pl,wps)
+print(pl.inventory)
 def battle(player,enemy):
 
     print("you encountered  an enemy!",end=" ")
@@ -100,6 +110,3 @@ def battle(player,enemy):
             if player.hp < 0:
                 print("you lost!")
     '''
-
-battle(pl,enemy)
-

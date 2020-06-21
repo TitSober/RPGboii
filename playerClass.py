@@ -22,3 +22,9 @@ class enemy1:
     def stats(self):
         print("This enemy has: ",self.hp," health, ",self.attack, " attack power and ",self.speed, "speed!")
 
+class weapon:
+    def __init__(self,name,cost,damage,lvl):
+        self.cost = cost
+        self.name = name
+        self.damage = damage
+        self.lvl = lvl
